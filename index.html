@@ -3,7 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thiwanka Alahakoon - Mechanical Engineering</title>
+    <title>Thiwanka Alahakoon - Mechanical Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,35 +29,52 @@
     </nav>
 
     <header class="hero">
-        <h1>Thiwanka Alahakoon</h1>
-        <p>Department of Mechanical Engineering, University of Peradeniya</p> 
-        <p>Passionate about the intersection of origami structures, 3D modeling, robotics, AI, and computer vision. </p>
-        <a href="projects.html" class="btn">View My Projects</a>
+        <div class="container">
+            <div class="hero-text">
+                <h1>Hi, I'm Thiwanka Alahakoon</h1>
+                <p class="headline">
+                    A Mechanical Engineer passionate about robotics, 3D modeling, and innovative design. Welcome to my portfolio.
+                </p>
+                <div class="hero-buttons">
+                    <a href="projects.html" class="btn">View My Projects</a>
+                    <a href="resume.html" class="btn btn-secondary">My Resume</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="images/profile.jpg" alt="Thiwanka Alahakoon">
+            </div>
+        </div>
     </header>
 
     <main class="container">
-        <h2 style="text-align:center; margin-bottom: 40px;">Featured Projects</h2>
+        <h2 class="page-header">Featured Projects</h2>
         <div class="project-grid">
-            <div class="card">
-                <h3>Design Optimization of an Origami-Inspired Airbag</h3>
-                <p>Conducted a literature review on origami-inspired airbag systems, analyzing various folding patterns for their crash absorption and deployment efficiency using simulations. </p>
-                <a href="projects.html#origami-airbag">Learn More &rarr;</a>
+            <div class="project-card">
+                <img src="images/project-origami.jpg" alt="Origami Airbag Project">
+                <div class="project-card-content">
+                    <h3>Origami-Inspired Airbag Design</h3>
+                    <p>Analyzed various folding patterns for their crash absorption and deployment efficiency to advance vehicle safety.</p>
+                </div>
             </div>
-            <div class="card">
-                 <h3>CAN Bus Data Visualization Tool</h3>
-                 <p>Developed a tool using Arduino and MATLAB to interpret and create graphical representations of automotive CAN bus data in real-time. </p>
-                 <a href="projects.html#can-bus">Learn More &rarr;</a>
+            <div class="project-card">
+                 <img src="images/project-canbus.jpg" alt="CAN Bus Tool Project">
+                 <div class="project-card-content">
+                    <h3>CAN Bus Data Visualization Tool</h3>
+                    <p>Developed a tool to interpret and visualize real-time automotive CAN bus data using Arduino and MATLAB.</p>
+                 </div>
             </div>
-            <div class="card">
-                 <h3>Sensor Bubble for Vegetable Carrier</h3>
-                 <p>An ongoing IoT project to develop a sensory system with 3D modeling to monitor environmental conditions for food transport and inform packaging solutions. </p>
-                <a href="projects.html#sensor-bubble">Learn More &rarr;</a>
+            <div class="project-card">
+                 <img src="images/project-sensor.jpg" alt="Sensor Bubble Project">
+                 <div class="project-card-content">
+                    <h3>IoT Sensor Bubble for Food Transport</h3>
+                    <p>An ongoing project to monitor environmental conditions for food transport to improve packaging solutions.</p>
+                 </div>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Thiwanka Alahakoon </p>
+        <p>&copy; 2025 Thiwanka Alahakoon | Engineering Portfolio</p>
     </footer>
 
 </body>
