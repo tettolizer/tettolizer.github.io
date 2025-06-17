@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects | Thiwanka Alahakoon</title>
+    <title>Projects | Thiwanka Alahakoon</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container"> <a href="index.html" class="logo">Thiwanka Alahakoon</a>
+        <div class="container">
+            <a href="index.html" class="logo">Thiwanka Alahakoon</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -24,59 +26,41 @@
             </ul>
         </div>
     </nav>
-    <main class="container">
-        <h1 class="page-header">My Projects</h1>
+
+    <main class="main-content container">
+        <h1 class="page-header animate-on-scroll">My Projects</h1>
         <div class="project-grid">
-            <div class="project-card">
-                <img src="images/project-origami.jpg" alt="Origami Airbag Project">
-                <div class="project-card-content">
-                    <h3>Design of Origami-Inspired Airbag</h3>
-                    <p>Conducted a literature review on origami-inspired airbag systems, analyzing folding patterns like Miura Ori for their crash absorption and deployment efficiency to advance vehicle safety technology.</p>
-                    <p class="tools-used">Tools: Python, Origami Simulator</p>
-                </div>
+            <div class="project-card glass-card animate-on-scroll">
+                <img src="images/project-origami.jpg" alt="Origami Project">
+                <div class="project-card-content"><h3>Design of Origami-Inspired Airbag</h3><p>Analyzed folding patterns for crash absorption and deployment efficiency.</p></div>
             </div>
-            <div class="project-card">
-                 <img src="images/project-canbus.jpg" alt="CAN Bus Tool Project">
-                 <div class="project-card-content">
-                    <h3>CAN Bus Data Visualization Tool</h3>
-                    <p>Developed a tool using Arduino boards and sensors to interpret automotive CAN bus data, implementing a two-step process for real-time data visualization and graphical representation.</p>
-                    <p class="tools-used">Tools: MATLAB, Arduino</p>
-                 </div>
+            <div class="project-card glass-card animate-on-scroll">
+                <img src="images/project-canbus.jpg" alt="CAN bus project">
+                <div class="project-card-content"><h3>CAN Bus Data Visualization Tool</h3><p>Developed a tool to interpret and visualize real-time automotive data.</p></div>
             </div>
-            <div class="project-card">
-                 <img src="images/project-sensor.jpg" alt="Sensor Bubble Project">
-                 <div class="project-card-content">
-                    <h3>IoT Sensor Bubble for Vegetable Carrier</h3>
-                    <p>An ongoing IoT project to develop a sensory system with 3D modeling and sensors to monitor environmental conditions of food during transport, aiming to improve packaging solutions.</p>
-                     <p class="tools-used">Status: Ongoing</p>
-                 </div>
+            <div class="project-card glass-card animate-on-scroll">
+                <img src="images/project-sensor.jpg" alt="Sensor project">
+                <div class="project-card-content"><h3>IoT Sensor Bubble for Food Transport</h3><p>A sensory system to monitor environmental conditions and improve packaging solutions.</p></div>
             </div>
-            <div class="project-card">
-                <img src="images/project-raft.jpg" alt="Optical Flow Project">
-                <div class="project-card-content">
-                   <h3>Enhancing RAFT for Optical Flow Estimation</h3>
-                   <p>Integrating attention mechanisms and multi-scale processing into RAFT with Attention-Based Pyramid Networks to improve optical flow estimation for more accurate motion analysis.</p>
-                    <p class="tools-used">Status: Ongoing</p>
-                </div>
-           </div>
-           <div class="project-card">
-                <img src="images/project-fpga.jpg" alt="FPGA Project">
-                <div class="project-card-content">
-                   <h3>Programming FPGA for MPSOC Design</h3>
-                   <p>Used Quartus II and Nios II software to program FPGAs, create basic systems on chips, modify CPUs, and create multiprocessor systems on chips.</p>
-                   <p class="tools-used">Tools: Quartus II, Nios II, FPGA</p>
-                </div>
-           </div>
-           <div class="project-card">
-            <img src="images/project-slicer.jpg" alt="Carrot Slicer Project">
-                <div class="project-card-content">
-                   <h3>Design and Model of a Carrot Slicer</h3>
-                   <p>Utilized standard techniques and SolidWorks to design and model the project, incorporating innovative methods inspired by survey findings and integrating data-driven insights.</p>
-                   <p class="tools-used">Tools: SolidWorks</p>
-                </div>
-           </div>
+            <div class="project-card glass-card animate-on-scroll">
+                <img src="images/project-fpga.jpg" alt="FPGA project">
+                <div class="project-card-content"><h3>Programming FPGA for MPSOC Design</h3><p>Used Quartus II and Nios II to program FPGAs and create multiprocessor systems.</p></div>
+            </div>
+             <div class="project-card glass-card animate-on-scroll">
+                <img src="images/project-slicer.jpg" alt="Carrot Slicer project">
+                <div class="project-card-content"><h3>Design and Model of a Carrot Slicer</h3><p>Designed a mechanical carrot slicer using data-driven insights from surveys.</p></div>
+            </div>
+             <div class="project-card glass-card animate-on-scroll">
+                <img src="images/project-raft.jpg" alt="RAFT project">
+                <div class="project-card-content"><h3>Enhancing RAFT for Optical Flow</h3><p>Improving optical flow estimation by integrating attention mechanisms.</p></div>
+            </div>
         </div>
     </main>
-    <footer> <p>&copy; 2025 Thiwanka Alahakoon | Engineering Portfolio</p> </footer>
+
+    <footer>
+        <p>&copy; 2025 Thiwanka Alahakoon</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resume | Thiwanka Alahakoon</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container"> <a href="index.html" class="logo">Thiwanka Alahakoon</a>
+        <div class="container">
+            <a href="index.html" class="logo">Thiwanka Alahakoon</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -24,34 +26,53 @@
             </ul>
         </div>
     </nav>
-    <main class="container">
-        <h1 class="page-header">My Resume</h1>
-        <div style="text-align: center; margin-bottom: 50px;">
+
+    <main class="main-content container">
+        <h1 class="page-header animate-on-scroll">Career & Education</h1>
+        <div style="text-align: center; margin-bottom: 50px;" class="animate-on-scroll">
             <a href="ThiwankaAlahakoon_Resume.pdf" class="btn" download>
-                <i class="fa-solid fa-file-arrow-down"></i> Download PDF
+                <i class="fas fa-file-arrow-down" style="margin-right: 8px;"></i> Download PDF
             </a>
         </div>
-         <div class="skill-category" style="margin-bottom: 30px;">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-            <p><strong>MSc in Computer Science (Reading)</strong> - University of Sri Jayewardenepura</p>
-            <p><strong>BSc (Hons) in Mechanical Engineering</strong> - University of Peradeniya</p>
-        </div>
-        <div class="skill-category" style="margin-bottom: 30px;">
-            <h3><i class="fa-solid fa-briefcase"></i> Experience</h3>
-            <p><strong>Teaching Assistant, University of Peradeniya</strong> (Jan 2024 - Present)</p>
-            <p><strong>Visiting Lecturer, Middlesex University</strong> (Oct 2024 - Present)</p>
-            <p><strong>Autonomation Engineer Intern, MAS Intimates</strong> (Jan 2022 - June 2022)</p>
-        </div>
 
-       
-
-        <div class="skill-category">
-            <h3><i class="fa-solid fa-award"></i> Achievements</h3>
-            <p><strong>University Colors, Hockey UOP</strong> (2022)</p>
-            <p><strong>High Distinction, Sri Lankan Mathematics Olympiad</strong> (2017, 2016, 2014)</p>
-            <p><strong>High Distinction, Australian National Chemistry Quiz</strong> (2016, 2014)</p>
+        <div class="glass-card animate-on-scroll" style="padding: 40px;">
+            <div class="resume-timeline">
+                <div class="resume-item">
+                    <div class="resume-icon"><i class="fas fa-chalkboard-teacher"></i></div>
+                    <div class="resume-content">
+                        <h4>Teaching Assistant</h4>
+                        <p>University of Peradeniya | Jan 2024 - Present</p>
+                    </div>
+                </div>
+                <div class="resume-item">
+                    <div class="resume-icon"><i class="fas fa-briefcase"></i></div>
+                    <div class="resume-content">
+                        <h4>Autonomation Engineer Intern</h4>
+                        <p>MAS Intimates | Jan 2022 - June 2022</p>
+                    </div>
+                </div>
+                <div class="resume-item">
+                    <div class="resume-icon"><i class="fas fa-user-graduate"></i></div>
+                    <div class="resume-content">
+                        <h4>MSc in Computer Science (Reading)</h4>
+                        <p>University of Sri Jayewardenepura | 2024 - Present</p>
+                    </div>
+                </div>
+                <div class="resume-item">
+                    <div class="resume-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="resume-content">
+                        <h4>BSc (Hons) in Mechanical Engineering</h4>
+                        <p>University of Peradeniya | 2018 - 2024</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
-    <footer> <p>&copy; 2025 Thiwanka Alahakoon | Engineering Portfolio</p> </footer>
+
+    <footer>
+        <p>&copy; 2025 Thiwanka Alahakoon</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

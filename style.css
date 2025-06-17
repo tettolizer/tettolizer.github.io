@@ -1,35 +1,89 @@
-/* --- Google Font Import --- */
+/* --- Google Font & Icons --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-/* --- General Body & Typography --- */
+/* --- Dark "Glass & Glow" Color Palette --- */
+:root {
+    --dark-bg: #111827;
+    --dark-card: #1F2937;
+    --glass-card-bg: rgba(31, 41, 55, 0.6);
+    --border-color: rgba(255, 255, 255, 0.1);
+    --orange-accent: #F97316;
+    --orange-glow: rgba(249, 115, 22, 0.5);
+    --light-text: #E5E7EB;
+    --subtle-text: #9CA3AF;
+}
+
+/* --- Main Body Layout & Sticky Footer --- */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f8f9fa;
-    color: #212529;
+    background-color: var(--dark-bg);
+    color: var(--light-text);
     line-height: 1.7;
+    overflow-x: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
+main.main-content {
+    flex-grow: 1;
+}
+
+/* --- Animated Gradient Background --- */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 15% 25%, var(--orange-glow) 0%, transparent 20%),
+                radial-gradient(circle at 85% 75%, rgba(59, 130, 246, 0.3) 0%, transparent 25%);
+    filter: blur(100px);
+    z-index: -1;
+    animation: moveGlow 20s infinite alternate;
+}
+
+@keyframes moveGlow {
+    from { transform: translate(0, 0) rotate(0deg); }
+    to { transform: translate(50px, 50px) rotate(15deg); }
+}
+
+/* --- Main Content Container (Wider Layout) --- */
 .container {
-    max-width: 1100px;
+    max-width: 1280px; /* Increased for a wider layout */
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 40px;
 }
 
 h1, h2, h3 {
-    color: #0d3d6e;
+    color: var(--light-text);
     font-weight: 700;
+}
+
+a {
+    color: var(--orange-accent);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #fb923c;
 }
 
 /* --- Navigation Bar --- */
 .navbar {
-    background-color: #fff;
-    padding: 1rem;
+    background-color: var(--glass-card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1rem 0;
     position: sticky;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 }
 
 .navbar .container {
@@ -41,19 +95,28 @@ h1, h2, h3 {
 .navbar .logo {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #0d3d6e;
-    text-decoration: none;
+    color: var(--light-text);
 }
 
 .nav-links { list-style: none; display: flex; margin: 0; padding: 0; }
 .nav-links li { margin-left: 25px; }
-.nav-links a { color: #495057; text-decoration: none; font-weight: 500; padding-bottom: 5px; border-bottom: 2px solid transparent; transition: all 0.3s ease; }
-.nav-links a:hover, .nav-links a.active { color: #0056b3; border-bottom-color: #0056b3; }
+.nav-links a { color: var(--subtle-text); font-weight: 500; transition: color 0.3s; padding-bottom: 5px; border-bottom: 2px solid transparent; }
+.nav-links a:hover, .nav-links a.active { color: var(--orange-accent); border-bottom-color: var(--orange-accent); }
 
-/* --- New Hero Section for Homepage --- */
+/* --- "Glassmorphism" Card Style --- */
+.glass-card {
+    background: var(--glass-card-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Hero Section Styles --- */
 .hero {
-    background: #ffffff;
-    padding: 80px 20px;
+    background: transparent;
+    padding: 100px 20px;
 }
 .hero .container {
     display: flex;
@@ -66,107 +129,159 @@ h1, h2, h3 {
     flex: 1;
     min-width: 320px;
 }
-.hero-text h1 { font-size: 3.2rem; margin-bottom: 15px; line-height: 1.2; }
-.hero-text .headline { font-size: 1.2rem; color: #495057; margin-bottom: 30px; }
+.hero-text h1 {
+    font-size: 3.2rem;
+    line-height: 1.2;
+}
+.hero-text .headline {
+    font-size: 1.2rem;
+    color: var(--subtle-text);
+    margin-bottom: 30px;
+}
+.headline .typed-text {
+    color: var(--orange-accent);
+    font-weight: 500;
+}
 .hero-image {
     flex: 1;
-    max-width: 400px;
+    max-width: 380px;
     min-width: 320px;
     text-align: center;
 }
 .hero-image img {
     max-width: 100%;
     border-radius: 50%;
-    border: 8px solid #e9ecef;
+    border: 1px solid var(--border-color);
+    padding: 8px;
+    background: var(--dark-card);
 }
-.hero-buttons .btn { margin-right: 15px; }
 
 /* --- Page Header Style --- */
 .page-header {
-    font-size: 2.8rem;
     text-align: center;
-    padding-bottom: 15px;
+    font-size: 2.8rem;
+    margin-top: 40px;
     margin-bottom: 50px;
     position: relative;
 }
 .page-header::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 80px;
     height: 4px;
-    background-color: #0056b3;
+    background: var(--orange-accent);
     border-radius: 2px;
 }
 
-/* --- Project Cards with Images --- */
+/* --- Project Grid (for Home, Projects, Contact pages) --- */
 .project-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
     gap: 30px;
+    grid-template-columns: 1fr; /* Default to 1 column on mobile */
 }
+@media (min-width: 768px) {
+    .project-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+    .project-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
 .project-card {
-    background: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.04);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    overflow: hidden; /* Important for image radius */
+    /* Inherits .glass-card styles */
+    overflow: hidden;
+    transition: transform 0.3s ease, background 0.3s ease;
     display: flex;
     flex-direction: column;
 }
-.project-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+.project-card:hover {
+    transform: translateY(-8px);
+    background: rgba(31, 41, 55, 0.75);
+}
 .project-card img {
     width: 100%;
     height: 220px;
-    object-fit: cover; /* Ensures images fill the space well */
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
 }
 .project-card-content {
     padding: 25px;
-    display: flex;
-    flex-direction: column;
     flex-grow: 1;
 }
-.project-card-content h3 { margin-top: 0; }
-.project-card-content .tools-used {
-    margin-top: auto;
-    padding-top: 15px;
-    font-style: italic;
-    color: #555;
+
+/* --- Skills Grid (for About page) --- */
+.skills-grid {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(2, 1fr); /* Default to 2 columns on mobile */
+}
+@media (min-width: 768px) {
+    .skills-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+    .skills-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-/* --- Skill Section with Icons --- */
-.skills-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-.skill-category { background: #fff; padding: 30px; border-radius: 12px; border: 1px solid #dee2e6; }
-.skill-category h3 { display: flex; align-items: center; gap: 10px; margin-top: 0; border-bottom: 2px solid #e9ecef; padding-bottom: 15px; margin-bottom: 20px; }
-.skill-category h3 i { color: #0056b3; font-size: 1.5rem; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 12px; }
-.skill-tag { background-color: #e9ecef; color: #495057; padding: 8px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; }
-
-/* --- Contact Page Icon Links --- */
-.contact-links {
+.skill-item {
+    background: rgba(17, 24, 39, 0.5);
+    padding: 15px;
+    border-radius: 12px;
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 40px;
-    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    transition: background 0.3s ease;
 }
-.contact-link-item {
-    color: #0d3d6e;
-    font-size: 1.2rem;
-    font-weight: 500;
+.skill-item:hover {
+    background: var(--dark-bg);
+}
+.skill-item i {
+    font-size: 1.8rem;
+    color: var(--orange-accent);
+    width: 30px;
     text-align: center;
-    transition: transform 0.3s ease, color 0.3s ease;
 }
-.contact-link-item:hover { transform: translateY(-5px); color: #0056b3; }
-.contact-link-item i { font-size: 3rem; display: block; margin-bottom: 15px; }
+.skill-item span {
+    font-weight: 500;
+}
+
+/* --- Resume Timeline with Icons --- */
+.resume-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.resume-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+.resume-icon {
+    background-color: var(--dark-card);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--orange-accent);
+    flex-shrink: 0;
+}
+.resume-content h4 {
+    margin: 0 0 5px 0;
+}
+.resume-content p {
+    margin: 0;
+    color: var(--subtle-text);
+}
 
 /* --- Buttons --- */
 .btn {
     display: inline-block;
-    background: #0067b3;
+    background: linear-gradient(90deg, #fb923c, var(--orange-accent));
     color: #fff !important;
     padding: 14px 28px;
     text-decoration: none;
@@ -176,9 +291,323 @@ h1, h2, h3 {
     border: none;
     cursor: pointer;
 }
-.btn:hover { background-color: #0d3d6e; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-.btn-secondary { background: none; border: 2px solid #dee2e6; color: #495057 !important; }
-.btn-secondary:hover { background: #e9ecef; border-color: #e9ecef; }
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px var(--orange-glow);
+}
+
+/* --- Animations --- */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.animate-on-scroll.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Staggering animation delays */
+.project-card:nth-child(2), .skill-item:nth-child(2) { transition-delay: 150ms; }
+.project-card:nth-child(3), .skill-item:nth-child(3) { transition-delay: 300ms; }
+
 
 /* --- Footer --- */
-footer { text-align: center; padding: 25px; background-color: #343a40; color: #f8f9fa; margin-top: 60px; }
+footer {
+    text-align: center;
+    padding: 25px;
+    background-color: #000;
+    color: var(--subtle-text);
+    margin-top: 60px;
+}
+
+/* --- New Horizontal Resume Timeline Styles --- */
+.timeline-wrapper {
+    position: relative;
+    padding: 50px 0;
+}
+
+.timeline-wrapper::after {
+    /* This is the central horizontal line */
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--border-color);
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    border-radius: 2px;
+}
+
+.timeline-event {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.timeline-event:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-content {
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    background: var(--dark-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+}
+
+.timeline-event:nth-child(odd) .timeline-content {
+    /* Events on the left */
+    left: 0;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+    /* Events on the right */
+    left: 60%;
+}
+
+.timeline-event::after {
+    /* This is the vertical stem line */
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 50px;
+    background-color: var(--border-color);
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-event:nth-child(odd) .timeline-content::after {
+    /* Triangle pointing right */
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -15px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 8px 0 8px 16px;
+    border-color: transparent transparent transparent var(--dark-card);
+}
+
+.timeline-event:nth-child(even) .timeline-content::after {
+    /* Triangle pointing left */
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -15px;
+    transform: translateY(-50%);
+    border-style: solid;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent var(--dark-card) transparent transparent;
+}
+
+
+.timeline-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--orange-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    z-index: 1;
+    border: 3px solid var(--dark-bg);
+}
+
+/* --- Responsive Timeline for Mobile --- */
+@media screen and (max-width: 992px) {
+    .timeline-wrapper::after {
+        /* Switch to a vertical line */
+        left: 25px;
+        top: 0;
+        height: 100%;
+    }
+    .timeline-event:nth-child(odd) .timeline-content,
+    .timeline-event:nth-child(even) .timeline-content {
+        /* Move all content to one side */
+        left: 70px;
+        width: calc(100% - 90px);
+    }
+    .timeline-event:nth-child(odd) .timeline-content::after,
+    .timeline-event:nth-child(even) .timeline-content::after {
+        /* All triangles point left */
+        left: -15px;
+        right: auto;
+        border-width: 8px 16px 8px 0;
+        border-color: transparent var(--dark-card) transparent transparent;
+    }
+    .timeline-icon {
+        left: 25px; /* Align icons with the vertical line */
+    }
+}
+/* --- New Journey Timeline Section --- */
+.journey-section {
+    padding: 40px;
+    margin-top: 60px;
+}
+
+.journey-section h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.journey-timeline {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0; /* The connector will handle the spacing */
+    margin-bottom: 50px;
+}
+
+.journey-step {
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 500;
+    margin: 5px;
+    position: relative;
+    white-space: nowrap; /* Prevents text from breaking into two lines */
+}
+
+/* Add a connector line between steps */
+.journey-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -22px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 2px;
+    background-color: var(--border-color);
+}
+
+/* Color styles for the timeline steps */
+.journey-step.color-1 { background-color: #10B981; } /* Green */
+.journey-step.color-2 { background-color: #3B82F6; } /* Blue */
+.journey-step.color-3 { background-color: #6366F1; } /* Indigo */
+.journey-step.color-4 { background-color: #8B5CF6; } /* Purple */
+.journey-step.color-5 { background-color: var(--orange-accent); } /* Orange */
+
+/* --- Strengths Section --- */
+.strengths-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Default to 1 column on mobile */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+/* Switch to 2 columns on tablets and desktops */
+@media (min-width: 768px) {
+    .strengths-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.strengths-grid h3 {
+    font-size: 1.5rem;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.strengths-grid ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.strengths-grid li {
+    padding: 10px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.strengths-grid li i {
+    color: var(--orange-accent);
+    margin-top: 5px;
+}
+
+
+/* --- FINAL Hero Section Fix --- */
+.hero {
+    /* This calculates the height to be 100% of the screen's height MINUS the navbar's height (approx. 80px) */
+    min-height: calc(100vh - 80px); 
+
+    /* These use flexbox to perfectly center your content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* This is needed for the arrow positioning */
+    position: relative; 
+    
+    padding: 20px;
+    background: transparent; /* This was missing in the previous snippet, adding it back */
+}
+
+/* These styles remain as they were */
+.hero .container { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
+.hero-text { flex: 1; min-width: 320px; }
+.hero-text h1 { font-size: 3.2rem; line-height: 1.2; }
+.hero-text .headline { font-size: 1.2rem; color: var(--subtle-text); margin-bottom: 30px; }
+.headline .typed-text { color: var(--orange-accent); font-weight: 500; }
+.hero-image { flex: 1; max-width: 380px; min-width: 320px; text-align: center; }
+.hero-image img { max-width: 100%; border-radius: 50%; border: 1px solid var(--border-color); padding: 8px; background: var(--dark-card); }
+
+
+/* --- Updated & Fixed Scroll Down Arrow --- */
+.scroll-down-arrow {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 5; /* Added z-index to ensure it's visible on top */
+}
+
+.scroll-down-arrow i {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--subtle-text);
+    /* Link the animation here */
+    animation: bounce 2.2s infinite;
+    opacity: 0.7; /* Start slightly transparent */
+}
+
+/* Stagger the animation for each arrow */
+.scroll-down-arrow i:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+.scroll-down-arrow i:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+/* The bounce animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+        opacity: 0.7;
+    }
+    40% {
+        transform: translateY(-20px);
+        opacity: 1;
+    }
+    60% {
+        transform: translateY(-10px);
+        opacity: 1;
+    }
+}

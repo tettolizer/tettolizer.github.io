@@ -4,17 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact | Thiwanka Alahakoon</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
 
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <nav class="navbar">
-        <div class="container"> <a href="index.html" class="logo">Thiwanka Alahakoon</a>
+        <div class="container">
+            <a href="index.html" class="logo">Thiwanka Alahakoon</a>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -24,31 +26,40 @@
             </ul>
         </div>
     </nav>
-    <main class="container">
-        <h1 class="page-header">Get In Touch</h1>
-        <p style="text-align: center; max-width: 600px; margin: -20px auto 40px auto;">
-            I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+
+    <main class="main-content container">
+        <h1 class="page-header animate-on-scroll">Get In Touch</h1>
+        <p class="animate-on-scroll" style="text-align: center; max-width: 600px; margin: -20px auto 40px auto; color: var(--subtle-text);">
+            I'm always open to discussing new projects, creative ideas, or opportunities. Feel free to reach out.
         </p>
 
-        <div class="contact-links">
-            <a href="mailto:thiwanka.alahakoon@eng.pdn.ac.lk" class="contact-link-item">
-                <i class="fa-solid fa-envelope"></i>
-                <span>Email</span>
+        <div class="project-grid">
+            <a href="mailto:thiwanka.alahakoon@eng.pdn.ac.lk" class="project-card glass-card animate-on-scroll" style="text-decoration:none; color: var(--light-text); align-items:center; padding: 30px; text-align: center;">
+                <center><i class="fas fa-envelope" style="font-size: 2.5rem; color: var(--orange-accent); margin-bottom:15px;"></i>
+                <h3>Email Me</h3>
+                <p style="color: var(--subtle-text);">thiwanka.alahakoon@eng.pdn.ac.lk</p></center>
             </a>
-            <a href="https://www.linkedin.com/in/thiwanka-ala" target="_blank" class="contact-link-item">
-                <i class="fa-brands fa-linkedin"></i>
-                <span>LinkedIn</span>
+             <a href="https://www.linkedin.com/in/thiwanka-ala" target="_blank" class="project-card glass-card animate-on-scroll" style="text-decoration:none; color: var(--light-text); align-items:center; padding: 30px; text-align: center;">
+               <center></center> <i class="fab fa-linkedin" style="font-size: 2.5rem; color: var(--orange-accent); margin-bottom:15px;"></i>
+                <h3>LinkedIn</h3>
+                <p style="color: var(--subtle-text);">Connect with me professionally.</p></center>
             </a>
-            <a href="https://github.com/tettolizer" target="_blank" class="contact-link-item">
-                <i class="fa-brands fa-github"></i>
-                <span>GitHub</span>
-            </a>
-            <a href="tel:+94764603427" class="contact-link-item">
-                <i class="fa-solid fa-phone"></i>
-                <span>Phone</span>
+             <a href="https://github.com/tettolizer" target="_blank" class="project-card glass-card animate-on-scroll" style="text-decoration:none; color: var(--light-text); align-items:center; padding: 30px; text-align: center;">
+                
+                <center>
+                    
+                <i class="fab fa-github" style="font-size: 2.5rem; color: var(--orange-accent); margin-bottom:15px;"></i>
+                <h3>GitHub</h3>
+                <p style="color: var(--subtle-text);">See my other code and projects.</p>
+                </center>
             </a>
         </div>
     </main>
-    <footer style="margin-top: 100px;"> <p>&copy; 2025 Thiwanka Alahakoon | Engineering Portfolio</p> </footer>
+
+    <footer>
+        <p>&copy; 2025 Thiwanka Alahakoon</p>
+    </footer>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

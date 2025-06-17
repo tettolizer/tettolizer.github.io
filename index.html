@@ -4,17 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiwanka Alahakoon - Mechanical Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <nav class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Thiwanka Alahakoon</a>
@@ -28,54 +21,92 @@
         </div>
     </nav>
 
-    <header class="hero">
-        <div class="container">
-            <div class="hero-text">
-                <h1>Hi, I'm Thiwanka Alahakoon</h1>
-                <p class="headline">
-                    A Mechanical Engineer passionate about robotics, 3D modeling, and innovative design. Welcome to my portfolio.
-                </p>
-                <div class="hero-buttons">
+    <main class="main-content">
+        <header class="hero">
+            <div class="container" style="display:flex; align-items:center; gap: 40px; flex-wrap: wrap;">
+                <div class="hero-text" style="flex:1;">
+                    <h1>Thiwanka Alahakoon</h1>
+                    <p class="headline">
+                        A Mechanical Engineer specializing in 
+                        <span class="typed-text" data-words='["Robotics.", "3D Modeling.", "Innovative Design.", "Simulations."]'></span>
+                    </p>
                     <a href="projects.html" class="btn">View My Projects</a>
-                    <a href="resume.html" class="btn btn-secondary">My Resume</a>
+                </div>
+                <div class="hero-image" style="flex:1; max-width:380px; text-align:center;">
+                    <img src="images/profile.jpg" alt="Thiwanka Alahakoon" class="animate-on-scroll">
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="images/profile.jpg" alt="Thiwanka Alahakoon">
+            <div class="scroll-down-arrow">
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down"></i>
+            <i class="fas fa-chevron-down"></i>
             </div>
-        </div>
-    </header>
+        </header>
 
-    <main class="container">
-        <h2 class="page-header">Featured Projects</h2>
-        <div class="project-grid">
-            <div class="project-card">
-                <img src="images/project-origami.jpg" alt="Origami Airbag Project">
-                <div class="project-card-content">
-                    <h3>Origami-Inspired Airbag Design</h3>
-                    <p>Analyzed various folding patterns for their crash absorption and deployment efficiency to advance vehicle safety.</p>
+        <div class="container">
+
+            <section class="journey-section glass-card animate-on-scroll">
+                <h2>My Journey</h2>
+                <div class="journey-timeline">
+                    <div class="journey-step color-1"><span>Math & Physics Focus</span></div>
+                    <div class="journey-step color-2"><span>BSc Mechanical Engineering</span></div>
+                    <div class="journey-step color-3"><span>Autonomation Intern</span></div>
+                    <div class="journey-step color-4"><span>MSc Computer Science</span></div>
+                    <div class="journey-step color-5"><span>Robotics & Smart Systems</span></div>
+                </div>
+                <div class="strengths-grid">
+                    <div class="strengths-column">
+                        <h3>Strengths & Passions</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i><span>Driven by a curiosity to solve complex challenges in smart, adaptive systems. </span></li>
+                            <li><i class="fas fa-check"></i><span>Passionate about the intersection of origami structures, simulations, and robotics. </span></li>
+                            <li><i class="fas fa-check"></i><span>Hands-on experience with 3D modeling, Arduino programming, and product development. </span></li>
+                        </ul>
+                    </div>
+                    <div class="strengths-column">
+                        <h3>Core Beliefs</h3>
+                        <ul>
+                            <li><i class="fas fa-lightbulb"></i><span>Pushing the boundaries of innovation in automobile, aerospace, and additive manufacturing. </span></li>
+                            <li><i class="fas fa-users"></i><span>Fostering knowledge through teaching and supervising practical lab sessions. </span></li>
+                            <li><i class="fas fa-cogs"></i><span>Combining academic knowledge with real-world engineering challenges. </span></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <div style="margin-top: 60px;">
+                <h2 class="page-header">Featured Projects</h2>
+                <div class="project-grid">
+                    <div class="project-card glass-card animate-on-scroll">
+                        <img src="images/project-origami.jpg" alt="Origami Airbag Project">
+                        <div class="project-card-content">
+                            <h3>Origami-Inspired Airbag Design</h3>
+                            <p>Analyzed folding patterns for crash absorption to advance vehicle safety technology. </p>
+                        </div>
+                    </div>
+                    <div class="project-card glass-card animate-on-scroll">
+                         <img src="images/project-canbus.jpg" alt="CAN Bus Tool Project">
+                         <div class="project-card-content">
+                            <h3>CAN Bus Data Visualization</h3>
+                            <p>Developed a tool to interpret and visualize real-time automotive CAN bus data. </p>
+                         </div>
+                    </div>
+                    <div class="project-card glass-card animate-on-scroll">
+                         <img src="images/project-sensor.jpg" alt="Sensor Bubble Project">
+                         <div class="project-card-content">
+                            <h3>IoT Sensor Bubble</h3>
+                            <p>An ongoing project to monitor environmental conditions for food transport. </p>
+                         </div>
+                    </div>
                 </div>
             </div>
-            <div class="project-card">
-                 <img src="images/project-canbus.jpg" alt="CAN Bus Tool Project">
-                 <div class="project-card-content">
-                    <h3>CAN Bus Data Visualization Tool</h3>
-                    <p>Developed a tool to interpret and visualize real-time automotive CAN bus data using Arduino and MATLAB.</p>
-                 </div>
-            </div>
-            <div class="project-card">
-                 <img src="images/project-sensor.jpg" alt="Sensor Bubble Project">
-                 <div class="project-card-content">
-                    <h3>IoT Sensor Bubble for Food Transport</h3>
-                    <p>An ongoing project to monitor environmental conditions for food transport to improve packaging solutions.</p>
-                 </div>
-            </div>
+
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Thiwanka Alahakoon | Engineering Portfolio</p>
+        <p>&copy; 2025 Thiwanka Alahakoon</p>
     </footer>
 
+    <script src="script.js" defer></script>
 </body>
 </html>
