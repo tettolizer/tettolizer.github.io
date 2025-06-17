@@ -1,5 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Scroll Animation Logic ---
+
+    // --- THEME SWITCHER LOGIC ---
+    const themeToggleButton = document.getElementById('theme-toggle');
+    const themeIcon = themeToggleButton ? themeToggleButton.querySelector('i') : null;
+    const currentTheme = localStorage.getItem('theme');
+
+    // Function to set the theme
+    const setTheme = (isDark) => {
+        document.body.classList.toggle('dark-mode', isDark);
+        if (themeIcon) {
+            themeIcon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+        }
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    };
+
+    // Check for saved theme in localStorage, or OS preference
+    if (currentTheme) {
+        setTheme(currentTheme === 'dark');
+    } else {
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark);
+    }
+
+    // Add click event listener to the toggle button
+    if (themeToggleButton) {
+        themeToggleButton.addEventListener('click', () => {
+            const isDark = document.body.classList.contains('dark-mode');
+            setTheme(!isDark);
+        });
+    }
+
+    // --- SCROLL ANIMATION LOGIC ---
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -7,13 +38,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1 // Trigger when 10% of the element is visible
+        threshold: 0.1
     });
 
     const hiddenElements = document.querySelectorAll('.animate-on-scroll');
     hiddenElements.forEach(el => observer.observe(el));
 
-    // --- Typing Effect Logic ---
+    // --- TYPING EFFECT LOGIC ---
     const typedTextElement = document.querySelector('.typed-text');
     if (typedTextElement) {
         const words = JSON.parse(typedTextElement.getAttribute('data-words'));
@@ -23,7 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         function type() {
             const currentWord = words[wordIndex];
-            // Use currentChars to build up the string for typing
             const currentChars = isDeleting ?
                 currentWord.substring(0, charIndex - 1) :
                 currentWord.substring(0, charIndex + 1);
@@ -31,18 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
             typedTextElement.textContent = currentChars;
             
             if (!isDeleting && charIndex < currentWord.length) {
-                // Typing forward
                 charIndex++;
                 setTimeout(type, 120);
             } else if (isDeleting && charIndex > 0) {
-                // Deleting
                 charIndex--;
                 setTimeout(type, 80);
             } else {
-                // Switch between typing and deleting
                 isDeleting = !isDeleting;
                 if (!isDeleting) {
-                    // Move to the next word
                     wordIndex = (wordIndex + 1) % words.length;
                 }
                 setTimeout(type, 1200);
